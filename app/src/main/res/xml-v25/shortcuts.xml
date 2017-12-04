@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shortcuts xmlns:android="http://schemas.android.com/apk/res/android">
+    <shortcut
+        android:shortcutId="shut_up"
+        android:enabled="true"
+        android:icon="@drawable/ic_shortcut_shut_up"
+        android:shortcutShortLabel="@string/app_name"
+        android:shortcutLongLabel="@string/app_name">
+        <intent
+            android:action="com.tommasoberlose.shutup.action.SHUT_UP"
+            android:targetPackage="com.tommasoberlose.shutup"
+            android:targetClass="com.tommasoberlose.shutup.MainActivity" />
+    </shortcut>
+</shortcuts>
+    
