@@ -11,7 +11,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        <activity android:name=".ui.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -29,7 +29,7 @@
         </activity>
 
         <receiver
-            android:name=".ShutUpReceiver"
+            android:name=".service.ShutUpReceiver"
             android:enabled="true"
             android:exported="true">
             <intent-filter>
@@ -38,7 +38,7 @@
         </receiver>
 
         <service
-            android:name=".QSIntentService"
+            android:name=".service.QSIntentService"
             android:icon="@drawable/ic_stat_shut_up"
             android:label="@string/app_name"
             android:permission="android.permission.BIND_QUICK_SETTINGS_TILE">
@@ -47,8 +47,14 @@
             </intent-filter>
         </service>
 
-        <activity android:name=".GhostActivity"
-            android:theme="@style/AppTheme.Transparent"/>
+        <activity android:name=".service.GhostActivity"
+            android:theme="@style/AppTheme.Transparent">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>

@@ -9,7 +9,7 @@
         <intent
             android:action="com.tommasoberlose.shutup.action.SHUT_UP"
             android:targetPackage="com.tommasoberlose.shutup"
-            android:targetClass="com.tommasoberlose.shutup.MainActivity" />
+            android:targetClass="com.tommasoberlose.shutup.ui.MainActivity" />
     </shortcut>
 </shortcuts>
     

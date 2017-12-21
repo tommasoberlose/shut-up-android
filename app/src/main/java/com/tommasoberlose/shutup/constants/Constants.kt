@@ -1,4 +1,4 @@
-package com.tommasoberlose.shutup
+package com.tommasoberlose.shutup.constants
 
 /**
  * Created by tommaso on 04/12/17.

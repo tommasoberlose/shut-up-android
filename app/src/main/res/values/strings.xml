@@ -10,4 +10,5 @@
     <string name="feedback_error">Ops, something went wrong…</string>
     <string name="main_subtitle">Silence your phone at any time by using a shortcut on your home page or through a beautiful quick setting in your status bar.</string>
     <string name="main_title">Shut up\nyour phone</string>
+    <string name="confirm">Confirm</string>
 </resources>

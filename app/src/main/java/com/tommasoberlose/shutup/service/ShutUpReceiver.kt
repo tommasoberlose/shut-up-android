@@ -1,11 +1,10 @@
-package com.tommasoberlose.shutup
+package com.tommasoberlose.shutup.service
 
-import android.app.Activity
 import android.content.BroadcastReceiver
 import android.content.Context
 import android.content.Intent
 import android.media.AudioManager
-import android.widget.Toast
+import com.tommasoberlose.shutup.util.ToastUtil
 
 class ShutUpReceiver : BroadcastReceiver() {
 

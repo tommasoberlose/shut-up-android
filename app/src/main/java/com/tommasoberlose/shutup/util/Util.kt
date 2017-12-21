@@ -1,9 +1,10 @@
-package com.tommasoberlose.shutup
+package com.tommasoberlose.shutup.util
 
 import android.content.Context
 import android.content.Intent
 import android.net.Uri
 import android.widget.Toast
+import com.tommasoberlose.shutup.R
 
 /**
  * Created by tommaso on 21/12/17.

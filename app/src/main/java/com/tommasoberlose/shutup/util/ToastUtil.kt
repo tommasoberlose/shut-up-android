@@ -1,12 +1,10 @@
-package com.tommasoberlose.shutup
+package com.tommasoberlose.shutup.util
 
 import android.content.Context
 import android.widget.Toast
 import android.view.Gravity
-import android.widget.TextView
-import android.view.ViewGroup
-import android.view.LayoutInflater
 import android.view.View
+import com.tommasoberlose.shutup.R
 
 
 /**

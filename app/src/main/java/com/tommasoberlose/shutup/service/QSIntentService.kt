@@ -1,7 +1,6 @@
-package com.tommasoberlose.shutup
+package com.tommasoberlose.shutup.service
 
 import android.content.Intent
-import android.service.quicksettings.Tile
 import android.service.quicksettings.TileService
 import android.os.Build
 import android.annotation.TargetApi

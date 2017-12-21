@@ -1,4 +1,4 @@
-package com.tommasoberlose.shutup
+package com.tommasoberlose.shutup.service
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
