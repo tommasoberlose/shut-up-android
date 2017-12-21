@@ -17,12 +17,12 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
             <intent-filter>
                 <action android:name="android.intent.action.CREATE_SHORTCUT" />
 
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
+
             <meta-data
                 android:name="android.app.shortcuts"
                 android:resource="@xml/shortcuts" />
@@ -46,6 +46,9 @@
                 <action android:name="android.service.quicksettings.action.QS_TILE" />
             </intent-filter>
         </service>
+
+        <activity android:name=".GhostActivity"
+            android:theme="@style/AppTheme.Transparent"/>
     </application>
 
 </manifest>

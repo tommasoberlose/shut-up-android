@@ -12,9 +12,12 @@ import android.support.v4.content.pm.ShortcutManagerCompat
 import android.R.attr.label
 import android.content.pm.ShortcutInfo
 import android.content.pm.ShortcutManager
+import android.support.design.widget.BottomSheetDialog
+import android.support.v4.content.ContextCompat
 import android.support.v4.content.pm.ShortcutInfoCompat
 import android.support.v4.graphics.drawable.IconCompat
-
+import android.view.View
+import kotlinx.android.synthetic.main.main_menu_layout.view.*
 
 
 class MainActivity : AppCompatActivity() {
@@ -26,7 +29,7 @@ class MainActivity : AppCompatActivity() {
       ShutUpReceiver.shutUpThisPhone(this)
       finish()
     } else if (intent.action == Intent.ACTION_CREATE_SHORTCUT) {
-      val shortcutIntent = Intent(this, MainActivity::class.java)
+      val shortcutIntent = Intent(this, GhostActivity::class.java)
       shortcutIntent.action = ShutUpReceiver.ACTION_SHUT_UP
       val shortcut = ShortcutInfoCompat.Builder(this, "shut_up")
           .setIntent(shortcutIntent)
@@ -38,5 +41,33 @@ class MainActivity : AppCompatActivity() {
     }
 
     setContentView(R.layout.activity_main)
+
+    action_menu.setOnClickListener {
+      showMenu()
+    }
+
+  }
+
+  fun showMenu() {
+    val mBottomSheetDialog = BottomSheetDialog(this)
+    val menuView: View = View.inflate(this, R.layout.main_menu_layout, null)
+
+    menuView.action_share.setOnClickListener {
+      Util.share(this@MainActivity)
+      mBottomSheetDialog.dismiss()
+    }
+
+    menuView.action_rate.setOnClickListener {
+      Util.rateApp(this@MainActivity, "https://play.google.com/store/apps/details?id=com.tommasoberlose.shutup")
+      mBottomSheetDialog.dismiss()
+    }
+
+    menuView.action_feedback.setOnClickListener {
+      Util.sendEmail(this@MainActivity)
+      mBottomSheetDialog.dismiss()
+    }
+
+    mBottomSheetDialog.setContentView(menuView)
+    mBottomSheetDialog.show()
   }
 }

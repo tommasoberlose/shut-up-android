@@ -1,3 +1,13 @@
 <resources>
     <string name="app_name">Shut Up</string>
+    <string name="device_silenced">Device silenced</string>
+    <string name="action_configure">Select streams</string>
+    <string name="action_share">Share</string>
+    <string name="action_feedback">Feedback</string>
+    <string name="action_rate">Rate the app</string>
+    <string name="feedback_title">Feedback Shut Up</string>
+    <string name="feedback_chooser_title">Send feedback with…</string>
+    <string name="feedback_error">Ops, something went wrong…</string>
+    <string name="main_subtitle">Silence your phone at any time by using a shortcut on your home page or through a beautiful quick setting in your status bar.</string>
+    <string name="main_title">Shut up\nyour phone</string>
 </resources>

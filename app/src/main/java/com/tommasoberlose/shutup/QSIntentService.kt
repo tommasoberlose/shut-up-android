@@ -23,7 +23,7 @@ class QSIntentService : TileService() {
     val isCurrentlyLocked = this.isLocked
 
     if (!isCurrentlyLocked) {
-      val intent = Intent(this, MainActivity::class.java)
+      val intent = Intent(this, GhostActivity::class.java)
       intent.action = ShutUpReceiver.ACTION_SHUT_UP
       startActivityAndCollapse(intent)
     }

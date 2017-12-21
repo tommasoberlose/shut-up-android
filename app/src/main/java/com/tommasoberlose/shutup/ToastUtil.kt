@@ -18,7 +18,7 @@ object ToastUtil {
     val customLayout = View.inflate(context, R.layout.toast_layout, null)
 
     val toast = Toast(context)
-    toast.setGravity(Gravity.TOP, 0, 0)
+    toast.setGravity(Gravity.TOP, 0, 50)
     toast.duration = Toast.LENGTH_SHORT
     toast.view = customLayout
     toast.show()
