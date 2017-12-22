@@ -30,10 +30,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/action_author"
-            style="@style/Settings.Title"
-            android:paddingLeft="16dp"
-            android:paddingRight="16dp"
-            android:textColor="@android:color/black"/>
+            style="@style/Menu.Item" />
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
@@ -56,10 +53,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/action_code"
-            style="@style/Settings.Title"
-            android:paddingLeft="16dp"
-            android:paddingRight="16dp"
-            android:textColor="@android:color/black"/>
+            style="@style/Menu.Item" />
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
@@ -84,10 +78,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/action_rate"
-            style="@style/Settings.Title"
-            android:paddingLeft="16dp"
-            android:paddingRight="16dp"
-            android:textColor="@android:color/black"/>
+            style="@style/Menu.Item" />
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
@@ -111,10 +102,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/action_feedback"
-            style="@style/Settings.Title"
-            android:paddingLeft="16dp"
-            android:paddingRight="16dp"
-            android:textColor="@android:color/black"/>
+            style="@style/Menu.Item" />
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
@@ -138,9 +126,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/action_share"
-            style="@style/Settings.Title"
-            android:paddingLeft="16dp"
-            android:paddingRight="16dp"
-            android:textColor="@android:color/black"/>
+            style="@style/Menu.Item" />
     </LinearLayout>
 </LinearLayout>
