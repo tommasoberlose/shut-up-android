@@ -8,7 +8,17 @@
     <string name="feedback_title">Feedback Shut Up</string>
     <string name="feedback_chooser_title">Send feedback with…</string>
     <string name="feedback_error">Ops, something went wrong…</string>
-    <string name="main_subtitle">Silence your phone at any time by using a shortcut on your home page or through a beautiful quick setting in your status bar.</string>
+    <string name="main_subtitle">Silence your phone at any time by using a shortcut on your homepage or through a beautiful quick setting in your status bar.</string>
     <string name="main_title">Shut up\nyour phone</string>
     <string name="confirm">Confirm</string>
+    <string name="action_code">View the project</string>
+    <string name="action_author">Know the developer</string>
+    <string name="error_opening_uri">Error opening URL: Link copied to clipboard.</string>
+    <string name="config_description">Choose which audio streams\nyou want to silence:</string>
+    <string name="stream_audio">Alarms</string>
+    <string name="stream_music">Music</string>
+    <string name="stream_notification">Notifications</string>
+    <string name="stream_ring">Phone ring</string>
+    <string name="stream_system">System sounds</string>
+    <string name="stream_voice_call">Phone calls</string>
 </resources>

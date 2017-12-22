@@ -1,8 +1,12 @@
 package com.tommasoberlose.shutup.util
 
+import android.content.ClipData
+import android.content.ClipboardManager
 import android.content.Context
 import android.content.Intent
 import android.net.Uri
+import android.support.customtabs.CustomTabsIntent
+import android.support.v4.content.ContextCompat
 import android.widget.Toast
 import com.tommasoberlose.shutup.R
 
@@ -12,8 +16,26 @@ import com.tommasoberlose.shutup.R
 
 object Util {
 
+  fun openURI(context: Context, url: String) {
+    try {
+      val builder: CustomTabsIntent.Builder = CustomTabsIntent.Builder()
+      builder.setToolbarColor(ContextCompat.getColor(context, R.color.colorPrimary))
+      val customTabsIntent: CustomTabsIntent = builder.build()
+      customTabsIntent.launchUrl(context, Uri.parse(url))
+    } catch (e: Exception) {
+      try {
+        val openIntent = Intent(Intent.ACTION_VIEW, Uri.parse(url))
+        context.startActivity(openIntent)
+      } catch (ignored: Exception) {
+        val clipboard: ClipboardManager = context.getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager
+        val clip = ClipData.newPlainText(context.getString(R.string.app_name), url)
+        clipboard.primaryClip = clip
+        Toast.makeText(context, R.string.error_opening_uri, Toast.LENGTH_LONG).show()
+      }
+    }
+  }
 
-  fun rateApp(context: Context, url: String) {
+  fun openAppURI(context: Context, url: String) {
     val openIntent = Intent(Intent.ACTION_VIEW, Uri.parse(url))
     context.startActivity(openIntent)
   }

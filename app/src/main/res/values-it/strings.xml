@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Shut Up</string>
+    <string name="device_silenced">Dispositivo silenziato</string>
+    <string name="action_configure">Scegli canali</string>
+    <string name="action_share">Condividi</string>
+    <string name="action_feedback">Invia Feedback</string>
+    <string name="action_rate">Valuta l\'applicazione</string>
+    <string name="feedback_title">Feedback Shut Up</string>
+    <string name="feedback_chooser_title">Invia feedback con…</string>
+    <string name="feedback_error">Ops, qualcosa non ha funzionato…</string>
+    <string name="main_subtitle">Silenzia il tuo telefono in ogni momento grazie ad una semplice scorciatoia o ad un collegamento veloce nella tua barra di stato.</string>
+    <string name="main_title">Silenzia il\ntuo telefono</string>
+    <string name="confirm">Conferma</string>
+    <string name="action_code">Il progetto</string>
+    <string name="action_author">Lo sviluppatore</string>
+    <string name="error_opening_uri">Errore apertura Url: link copiato negli appunti.</string>
+    <string name="config_description">Scegli quali canali audio\npreferisci silenziare:</string>
+    <string name="stream_audio">Allarmi</string>
+    <string name="stream_music">Musica</string>
+    <string name="stream_notification">Notifiche</string>
+    <string name="stream_ring">Suoneria</string>
+    <string name="stream_system">Suoni di sistema</string>
+    <string name="stream_voice_call">Chiamate vocali</string>
+</resources>

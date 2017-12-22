@@ -28,7 +28,9 @@
 
     <style name="ActivitySubtitle" parent="Base.TextAppearance.AppCompat.Medium">
         <item name="android:textSize">20sp</item>
-        <item name="android:textColor">@color/colorPrimaryText</item>
+        <item name="android:textColor">@android:color/black</item>
+        <item name="android:alpha">0.8</item>
+        <item name="android:textStyle">bold</item>
     </style>
 
     <style name="Settings.Title" parent="TextAppearance.AppCompat.Medium">

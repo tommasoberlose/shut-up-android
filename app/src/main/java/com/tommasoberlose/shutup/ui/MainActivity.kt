@@ -3,13 +3,11 @@ package com.tommasoberlose.shutup.ui
 import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
-import kotlinx.android.synthetic.main.activity_main.*
 import android.support.v4.content.pm.ShortcutManagerCompat
 import android.support.design.widget.BottomSheetDialog
 import android.support.v4.content.pm.ShortcutInfoCompat
 import android.support.v4.graphics.drawable.IconCompat
 import android.view.View
-import kotlinx.android.synthetic.main.main_menu_layout.view.*
 import android.widget.Toast
 import android.text.TextUtils
 import com.tommasoberlose.shutup.service.GhostActivity
@@ -21,7 +19,11 @@ import android.view.ViewAnimationUtils
 import android.animation.Animator
 import android.animation.AnimatorListenerAdapter
 import android.app.Activity
+import android.media.AudioManager
 import android.view.animation.AccelerateDecelerateInterpolator
+import com.tommasoberlose.shutup.util.ConfigManager
+import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.main_menu_layout.view.*
 
 
 class MainActivity : AppCompatActivity() {
@@ -48,6 +50,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     setContentView(R.layout.activity_main)
+    setupConfig()
 
     action_menu.setOnClickListener {
       showMenu()
@@ -60,11 +63,61 @@ class MainActivity : AppCompatActivity() {
     action_close_config.setOnClickListener {
       closeConfig()
     }
-
   }
 
-  fun showConfig() {
-    val cy = config_layout.height - action_configure.height
+  override fun onBackPressed() {
+    if (config_layout.visibility == View.VISIBLE) {
+      closeConfig()
+    } else {
+      super.onBackPressed()
+    }
+  }
+
+  fun setupConfig() {
+    action_stream_audio.setOnClickListener {
+      ConfigManager.toggleStreamConfig(this, AudioManager.STREAM_ALARM)
+      updateUI()
+    }
+
+    action_stream_music.setOnClickListener {
+      ConfigManager.toggleStreamConfig(this, AudioManager.STREAM_MUSIC)
+      updateUI()
+    }
+
+    action_stream_notification.setOnClickListener {
+      ConfigManager.toggleStreamConfig(this, AudioManager.STREAM_NOTIFICATION)
+      updateUI()
+    }
+
+    action_stream_ring.setOnClickListener {
+      ConfigManager.toggleStreamConfig(this, AudioManager.STREAM_RING)
+      updateUI()
+    }
+
+    action_stream_system.setOnClickListener {
+      ConfigManager.toggleStreamConfig(this, AudioManager.STREAM_SYSTEM)
+      updateUI()
+    }
+
+    action_stream_voice_call.setOnClickListener {
+      ConfigManager.toggleStreamConfig(this, AudioManager.STREAM_VOICE_CALL)
+      updateUI()
+    }
+
+    updateUI()
+  }
+
+  fun updateUI() {
+    action_stream_audio.alpha = if (ConfigManager.isStreamSelected(this, AudioManager.STREAM_ALARM)) 1F else 0.5F
+    action_stream_music.alpha = if (ConfigManager.isStreamSelected(this, AudioManager.STREAM_MUSIC)) 1F else 0.5F
+    action_stream_notification.alpha = if (ConfigManager.isStreamSelected(this, AudioManager.STREAM_NOTIFICATION)) 1F else 0.5F
+    action_stream_ring.alpha = if (ConfigManager.isStreamSelected(this, AudioManager.STREAM_RING)) 1F else 0.5F
+    action_stream_system.alpha = if (ConfigManager.isStreamSelected(this, AudioManager.STREAM_SYSTEM)) 1F else 0.5F
+    action_stream_voice_call.alpha = if (ConfigManager.isStreamSelected(this, AudioManager.STREAM_VOICE_CALL)) 1F else 0.5F
+  }
+
+  private fun showConfig() {
+    val cy = config_layout.height
     val finalRadius = Math.hypot(config_layout.width.toDouble(), config_layout.height.toDouble()).toFloat()
     val anim = ViewAnimationUtils.createCircularReveal(config_layout, config_layout.width / 2, cy, 0f, finalRadius)
     config_layout.visibility = View.VISIBLE
@@ -73,8 +126,8 @@ class MainActivity : AppCompatActivity() {
     anim.start()
   }
 
-  fun closeConfig() {
-    val cy = config_layout.height - action_configure.height
+  private fun closeConfig() {
+    val cy = config_layout.height
     val initialRadius = Math.hypot(config_layout.width.toDouble(), config_layout.height.toDouble()).toFloat()
     val anim = ViewAnimationUtils.createCircularReveal(config_layout, config_layout.width / 2, cy, initialRadius, 0f)
     anim.interpolator = AccelerateDecelerateInterpolator()
@@ -86,14 +139,22 @@ class MainActivity : AppCompatActivity() {
       }
     })
 
-// start the animation
     anim.start()
-
   }
 
-  fun showMenu() {
+  private fun showMenu() {
     val mBottomSheetDialog = BottomSheetDialog(this)
     val menuView: View = View.inflate(this, R.layout.main_menu_layout, null)
+
+    menuView.action_project.setOnClickListener {
+      Util.openURI(this@MainActivity, "https://github.com/tommasoberlose/shut-up-android")
+      mBottomSheetDialog.dismiss()
+    }
+
+    menuView.action_author.setOnClickListener {
+      Util.openURI(this@MainActivity, "http://tommasoberlose.com/")
+      mBottomSheetDialog.dismiss()
+    }
 
     menuView.action_share.setOnClickListener {
       Util.share(this@MainActivity)
@@ -101,7 +162,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     menuView.action_rate.setOnClickListener {
-      Util.rateApp(this@MainActivity, "https://play.google.com/store/apps/details?id=com.tommasoberlose.shutup")
+      Util.openAppURI(this@MainActivity, "https://play.google.com/store/apps/details?id=com.tommasoberlose.shutup")
       mBottomSheetDialog.dismiss()
     }
 
