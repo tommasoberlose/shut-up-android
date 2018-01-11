@@ -3,7 +3,7 @@
     <shortcut
         android:shortcutId="shut_up"
         android:enabled="true"
-        android:icon="@drawable/ic_shortcut_shut_up"
+        android:icon="@mipmap/ic_shortcut"
         android:shortcutShortLabel="@string/app_name"
         android:shortcutLongLabel="@string/app_name">
         <intent

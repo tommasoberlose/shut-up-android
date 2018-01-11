@@ -8,9 +8,6 @@ class GhostActivity : AppCompatActivity() {
 
   override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
-
-    Log.d("SHUT_UP", "3")
-
     ShutUpReceiver.shutUpThisPhone(this)
     finish()
   }

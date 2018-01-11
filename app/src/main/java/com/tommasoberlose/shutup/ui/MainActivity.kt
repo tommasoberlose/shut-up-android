@@ -1,5 +1,6 @@
 package com.tommasoberlose.shutup.ui
 
+import android.Manifest.permission.INSTALL_SHORTCUT
 import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
@@ -21,9 +22,13 @@ import android.animation.AnimatorListenerAdapter
 import android.app.Activity
 import android.media.AudioManager
 import android.view.animation.AccelerateDecelerateInterpolator
+import com.tommasoberlose.shutup.constants.Constants
 import com.tommasoberlose.shutup.util.ConfigManager
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.main_menu_layout.view.*
+import android.app.PendingIntent
+
+
 
 
 class MainActivity : AppCompatActivity() {
@@ -37,15 +42,15 @@ class MainActivity : AppCompatActivity() {
       val shortcut = ShortcutInfoCompat.Builder(this, "shut_up")
           .setIntent(shortcutIntent)
           .setShortLabel(getString(R.string.app_name))
-          .setIcon(IconCompat.createWithResource(this, R.mipmap.ic_launcher))
+          .setIcon(IconCompat.createWithResource(this, R.mipmap.ic_shortcut))
+          .setLongLabel(getString(R.string.app_name))
           .build()
-      ShortcutManagerCompat.requestPinShortcut(this, shortcut, null)
 
-      val result = Intent(android.content.Intent.ACTION_CREATE_SHORTCUT)
-      result.putExtra(Intent.EXTRA_SHORTCUT_INTENT, Intent(this, GhostActivity::class.java))
-      result.putExtra(Intent.EXTRA_SHORTCUT_NAME, getString(R.string.app_name))
-      result.putExtra(Intent.EXTRA_SHORTCUT_ICON_RESOURCE, Intent.ShortcutIconResource.fromContext(this, R.mipmap.ic_launcher))
-      setResult(Activity.RESULT_OK, result)
+      val pinnedShortcutCallbackIntent = ShortcutManagerCompat.createShortcutResultIntent(this, shortcut)
+      setResult(Activity.RESULT_OK, pinnedShortcutCallbackIntent)
+      finish()
+    } else if (intent.action == ShutUpReceiver.ACTION_SHUT_UP) {
+      startActivity(Intent(this, GhostActivity::class.java))
       finish()
     }
 
