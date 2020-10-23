@@ -2,12 +2,12 @@ package com.tommasoberlose.shutup.ui
 
 import android.Manifest.permission.INSTALL_SHORTCUT
 import android.content.Intent
-import android.support.v7.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.support.v4.content.pm.ShortcutManagerCompat
-import android.support.design.widget.BottomSheetDialog
-import android.support.v4.content.pm.ShortcutInfoCompat
-import android.support.v4.graphics.drawable.IconCompat
+import androidx.core.content.pm.ShortcutManagerCompat
+import com.google.android.material.bottomsheet.BottomSheetDialog
+import androidx.core.content.pm.ShortcutInfoCompat
+import androidx.core.graphics.drawable.IconCompat
 import android.view.View
 import android.widget.Toast
 import android.text.TextUtils

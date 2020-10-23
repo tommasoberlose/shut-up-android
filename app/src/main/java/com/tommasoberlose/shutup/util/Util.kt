@@ -5,8 +5,8 @@ import android.content.ClipboardManager
 import android.content.Context
 import android.content.Intent
 import android.net.Uri
-import android.support.customtabs.CustomTabsIntent
-import android.support.v4.content.ContextCompat
+import androidx.browser.customtabs.CustomTabsIntent
+import androidx.core.content.ContextCompat
 import android.widget.Toast
 import com.tommasoberlose.shutup.R
 
@@ -29,7 +29,7 @@ object Util {
       } catch (ignored: Exception) {
         val clipboard: ClipboardManager = context.getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager
         val clip = ClipData.newPlainText(context.getString(R.string.app_name), url)
-        clipboard.primaryClip = clip
+        clipboard.setPrimaryClip(clip)
         Toast.makeText(context, R.string.error_opening_uri, Toast.LENGTH_LONG).show()
       }
     }

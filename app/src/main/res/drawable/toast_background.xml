@@ -4,5 +4,5 @@
     <corners
         android:radius="60dp" />
     <solid
-        android:color="@color/backgroundColor" />
+        android:color="@color/toastBackgroundColor" />
 </shape>

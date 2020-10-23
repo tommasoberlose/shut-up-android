@@ -19,7 +19,7 @@
         android:padding="16dp"
         android:id="@+id/action_author"
         android:orientation="horizontal">
-        <ImageView
+        <androidx.appcompat.widget.AppCompatImageView
             android:layout_width="24dp"
             android:layout_height="24dp"
             android:layout_marginRight="8dp"
@@ -42,7 +42,7 @@
         android:padding="16dp"
         android:id="@+id/action_project"
         android:orientation="horizontal">
-        <ImageView
+        <androidx.appcompat.widget.AppCompatImageView
             android:layout_width="24dp"
             android:layout_height="24dp"
             android:layout_marginRight="8dp"
@@ -66,7 +66,7 @@
         android:textSize="14sp"
         android:id="@+id/action_rate"
         android:orientation="horizontal">
-        <ImageView
+        <androidx.appcompat.widget.AppCompatImageView
             android:layout_width="24dp"
             android:layout_height="24dp"
             android:padding="2dp"
@@ -90,7 +90,7 @@
         android:padding="16dp"
         android:id="@+id/action_feedback"
         android:orientation="horizontal">
-        <ImageView
+        <androidx.appcompat.widget.AppCompatImageView
             android:layout_width="24dp"
             android:layout_height="24dp"
             android:padding="2dp"
@@ -114,7 +114,7 @@
         android:padding="16dp"
         android:id="@+id/action_share"
         android:orientation="horizontal">
-        <ImageView
+        <androidx.appcompat.widget.AppCompatImageView
             android:layout_width="24dp"
             android:layout_height="24dp"
             android:padding="2dp"

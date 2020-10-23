@@ -25,17 +25,20 @@
         <item name="android:textSize">40sp</item>
         <item name="android:textColor">@android:color/black</item>
         <item name="android:alpha">0.8</item>
+        <item name="android:fontFamily">@font/google_sans</item>
     </style>
 
     <style name="ActivitySubtitle" parent="Base.TextAppearance.AppCompat.Medium">
         <item name="android:textSize">20sp</item>
         <item name="android:textColor">@android:color/white</item>
         <item name="android:textStyle">bold</item>
+        <item name="android:fontFamily">@font/google_sans</item>
     </style>
 
     <style name="Settings.Title" parent="TextAppearance.AppCompat.Medium">
         <item name="android:textColor">@android:color/white</item>
         <item name="android:textSize">20sp</item>
+        <item name="android:fontFamily">@font/google_sans</item>
         <item name="android:textStyle">bold</item>
     </style>
 
@@ -45,6 +48,7 @@
         <item name="android:textStyle">bold</item>
         <item name="android:paddingLeft">16dp</item>
         <item name="android:paddingRight">16dp</item>
+        <item name="android:fontFamily">@font/google_sans</item>
     </style>
 
     <style name="Settings.ListItem" parent="TextAppearance.AppCompat.Button">
@@ -53,6 +57,7 @@
         <item name="android:padding">16dp</item>
         <item name="android:clickable">true</item>
         <item name="android:focusable">true</item>
+        <item name="android:fontFamily">@font/google_sans</item>
         <item name="android:foreground">?android:selectableItemBackground</item>
     </style>
 

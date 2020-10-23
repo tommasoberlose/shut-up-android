@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="toastBackgroundColor">#323232</color>
+    <color name="toastColorPrimaryText">#FFFFFF</color>
+</resources>
