@@ -5,6 +5,6 @@
     <color name="colorAccent">#FF4081</color>
     <color name="backgroundColor">#323232</color>
     <color name="colorPrimaryText">#FFFFFF</color>
-    <color name="toastBackgroundColor">#FFFFFF</color>
-    <color name="toastColorPrimaryText">#323232</color>
+    <color name="toastBackgroundColor">#323232</color>
+    <color name="toastColorPrimaryText">#FFFFFF</color>
 </resources>
